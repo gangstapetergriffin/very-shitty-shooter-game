@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     private float CurrentSpeed;
     public float WalkingSpeed = 10f;
-    public float RunningSpeed = 15f;
+    public float RunningSpeed = 20f;
 
     public float Gravity = -0.5f;
 
@@ -32,5 +33,14 @@ public class PlayerMovement : MonoBehaviour
             transform.up * Gravity +
             transform.forward * moveZ;
         characterController.Move(move);
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        { 
+            CurrentSpeed = RunningSpeed; 
+        }
+        else
+        {
+            CurrentSpeed = WalkingSpeed;
+        }
     }
 }
