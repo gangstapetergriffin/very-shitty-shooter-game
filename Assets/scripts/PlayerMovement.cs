@@ -10,17 +10,21 @@ public class PlayerMovement : MonoBehaviour
     public float RunningSpeed = 20f;
 
     public float Gravity = -0.5f;
+    public float JumpSpeed = 0.8f;
+    private float BaseLineGravity;
 
     private float moveX;
     private float moveZ;
     private Vector3 move;
 
     public CharacterController characterController;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         CurrentSpeed = WalkingSpeed;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -34,13 +38,18 @@ public class PlayerMovement : MonoBehaviour
             transform.forward * moveZ;
         characterController.Move(move);
 
-        if(Input.GetKey(KeyCode.LeftShift))
-        { 
-            CurrentSpeed = RunningSpeed; 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            CurrentSpeed = RunningSpeed;
         }
         else
         {
             CurrentSpeed = WalkingSpeed;
+        }
+
+        if (characterController.isGrounded && Input.GetButtonDown("Jump"))
+        {
+            rb.AddForce(Vector3.up * 100, ForceMode.Impulse);
         }
     }
 }
