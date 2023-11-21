@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float WalkingSpeed = 10f;
     public float RunningSpeed = 20f;
 
-    public float Gravity = -0.5f;
-    public float JumpSpeed = 0.8f;
+    public float Gravity = -0.2f;
+    public float JumpSpeed = 0.1f;
     private float BaseLineGravity;
 
     private float moveX;
@@ -18,13 +18,12 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 move;
 
     public CharacterController characterController;
-    private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
         CurrentSpeed = WalkingSpeed;
-        rb = GetComponent<Rigidbody>();
+        BaseLineGravity = Gravity;
     }
 
     // Update is called once per frame
@@ -49,7 +48,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (characterController.isGrounded && Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(Vector3.up * 100, ForceMode.Impulse);
+            Gravity = BaseLineGravity;
+            Gravity *= -JumpSpeed;
         }
+        if (Gravity > BaseLineGravity)
+        {
+            Gravity -=0.5f * JumpSpeed * Time.deltaTime;
+        };
     }
 }

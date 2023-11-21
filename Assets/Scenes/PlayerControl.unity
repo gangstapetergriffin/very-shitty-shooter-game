@@ -559,36 +559,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkingSpeed: 10
   RunningSpeed: 15
-  Gravity: -0.5
-  JumpSpeed: 0.8
+  Gravity: -0.2
+  JumpSpeed: 0.1
   characterController: {fileID: 970629287}
---- !u!54 &970629289
-Rigidbody:
+--- !u!114 &970629289
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970629285}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 90
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1fffb308366a2845a6e86c46b40d167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 963194227}
 --- !u!1 &1096649646
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +589,7 @@ GameObject:
   - component: {fileID: 1096649647}
   m_Layer: 0
   m_Name: floor
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,7 +893,7 @@ GameObject:
   - component: {fileID: 1495215124}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
