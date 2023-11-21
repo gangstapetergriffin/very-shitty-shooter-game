@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
-    public Camera Camera;
+    public Camera Cam;
 
     private Ray ray;
     private RaycastHit hit;
@@ -14,7 +14,15 @@ public class Shooting : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("sex");
+            ray = Cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.tag.Equals("NPC"))
+                {
+                    Debug.Log("hit npc");
+                    Destroy(hit.collider.gameObject);
+                }
+            }
         }
     }
 }
