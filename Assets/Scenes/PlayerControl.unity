@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OGEnemy: {fileID: 6331096314088044530, guid: a914013805ef7b842b3b507060a55e76, type: 3}
-  EnemyMax: 1
+  EnemyMax: 2000
 --- !u!4 &782198566
 Transform:
   m_ObjectHideFlags: 0
