@@ -12,17 +12,23 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
         {
-            ray = Cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit))
+            float rndAngleX = Random.Range(1, 10);
+            float rndAngleY = Random.Range(1, 10);
+            if (Input.GetMouseButtonDown(0))
             {
-                if (hit.collider.tag.Equals("NPC"))
+                ray = Cam.ScreenPointToRay(Input.mousePosition + new Vector3(rndAngleX, rndAngleY));
+                if (Physics.Raycast(ray, out hit))
                 {
-                    Debug.Log("hit npc");
-                    Destroy(hit.collider.gameObject);
+                    Debug.Log(hit.point);
+                    if (hit.collider.tag.Equals("NPC"))
+                    {
+                        Debug.Log("hit npc");
+                        Destroy(hit.collider.gameObject);
+                    }
                 }
             }
         }
+
     }
 }

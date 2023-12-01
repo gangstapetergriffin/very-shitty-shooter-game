@@ -610,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8ba107da50cf63a4db53356966207e69, type: 2}
     - target: {fileID: 919132149155446097, guid: d50c5d6c3eaff914f87a3d85eafd6022, type: 3}
       propertyPath: m_Name
-      value: Browning HP
+      value: BrowningHP
       objectReference: {fileID: 0}
     - target: {fileID: 5959365884409519794, guid: d50c5d6c3eaff914f87a3d85eafd6022, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -620,7 +620,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -6774364355915842968, guid: d50c5d6c3eaff914f87a3d85eafd6022, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d50c5d6c3eaff914f87a3d85eafd6022, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1653564977}
   m_SourcePrefab: {fileID: 100100000, guid: d50c5d6c3eaff914f87a3d85eafd6022, type: 3}
 --- !u!1 &177419072
 GameObject:
@@ -1124,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OGEnemy: {fileID: 6331096314088044530, guid: a914013805ef7b842b3b507060a55e76, type: 3}
-  EnemyMax: 1000
+  EnemyMax: 1
 --- !u!4 &782198566
 Transform:
   m_ObjectHideFlags: 0
@@ -2241,6 +2244,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smooth: 8
   swayMultiplier: 16
+  GunRecoilAmount: 32
+  RecoilSmooth: 18
 --- !u!1 &1316605272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2789,6 +2794,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1653564976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d50c5d6c3eaff914f87a3d85eafd6022, type: 3}
+  m_PrefabInstance: {fileID: 173069784}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1653564977
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653564976}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcbe01cbbbcfa1d409be257f654dc881, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1653574009
 GameObject:
   m_ObjectHideFlags: 0

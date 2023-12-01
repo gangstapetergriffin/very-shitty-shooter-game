@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class testsway : MonoBehaviour
 {
+    private Animation anim;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,9 @@ public class testsway : MonoBehaviour
 
     float bobbingCounter = 0f;
     float bobbingMagnitude = .01f;
+    [Header("Sway Settings")]
+    public float GunRecoilAmount;
+    public float RecoilSmooth;
 
     // Update is called once per frame
     void Update()
@@ -49,5 +53,11 @@ public class testsway : MonoBehaviour
         // finally rotate the weapon
         transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, smooth * Time.deltaTime);
 
+        Quaternion GunRecoil = Quaternion.AngleAxis(GunRecoilAmount, Vector3.left);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, GunRecoil, RecoilSmooth * 2);
+        }
     }
 }
