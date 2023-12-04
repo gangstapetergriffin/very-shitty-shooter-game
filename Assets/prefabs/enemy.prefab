@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 5427127777855478523}
   SquareOfMovement: 50
-  closeEnough: 2
+  closeEnough: 10
 --- !u!114 &3444567857026579447
 MonoBehaviour:
   m_ObjectHideFlags: 0
