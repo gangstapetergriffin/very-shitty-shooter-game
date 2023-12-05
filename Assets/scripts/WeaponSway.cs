@@ -19,7 +19,7 @@ public class testsway : MonoBehaviour
 
     float bobbingCounter = 0f;
     float bobbingMagnitude = .01f;
-    [Header("Sway Settings")]
+    [Header("Recoil Settings")]
     public float GunRecoilAmount;
     public float RecoilSmooth;
 
