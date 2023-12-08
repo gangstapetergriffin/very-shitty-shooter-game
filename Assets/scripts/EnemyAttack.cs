@@ -7,16 +7,21 @@ public class EnemyAttack : MonoBehaviour
     private EnemyMovement enemyMovement;
     private Transform player;
     public float AttackRange = 10;
+    public float DamageRange = 1.5f;
 
     public Material defaultMaterial;
     public Material attackMaterial;
     private Renderer rend;
-
+    private GameObject PlayerGO;
     public bool foundPlayer;
+    private bool PlayerDamage;
+    
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        PlayerGO = GameObject.FindGameObjectWithTag("Player");
+         
         enemyMovement = GetComponent<EnemyMovement>();
         rend = GetComponent<Renderer>();
     }
@@ -26,6 +31,10 @@ public class EnemyAttack : MonoBehaviour
         
     }
 
+    void Demage()
+    {
+        PlayerDamage = false;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +49,12 @@ public class EnemyAttack : MonoBehaviour
             rend.sharedMaterial = defaultMaterial;
             enemyMovement.newLocation();
             foundPlayer = false;
+        }
+        if (Vector3.Distance(transform.position, player.position) <= DamageRange && PlayerDamage == false)
+        {
+            PlayerDamage = true;
+            PlayerGO.GetComponent<Health>().DealDamage(Random.Range(0, 10));
+            Invoke("Demage", 0.8f);
         }
     }
 }
