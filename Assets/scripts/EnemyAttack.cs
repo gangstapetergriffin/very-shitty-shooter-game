@@ -53,7 +53,7 @@ public class EnemyAttack : MonoBehaviour
         if (Vector3.Distance(transform.position, player.position) <= DamageRange && PlayerDamage == false)
         {
             PlayerDamage = true;
-            PlayerGO.GetComponent<Health>().DealDamage(Random.Range(0, 10));
+            PlayerGO.GetComponent<Health>().DealDamage(Random.Range(5, 10));
             Invoke("Demage", 0.8f);
         }
     }
