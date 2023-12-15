@@ -159,9 +159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f04dcf21e991464ca1c8278f09e4416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackRange: 10
+  AttackRange: 20
   DamageRange: 1.8
   defaultMaterial: {fileID: 2100000, guid: 0c8b14603cc14654ba187dad36bd941f, type: 2}
   attackMaterial: {fileID: 2100000, guid: c5888dd90080acf459a98886a323a819, type: 2}
   foundPlayer: 0
-  PlayerDamage: 0
